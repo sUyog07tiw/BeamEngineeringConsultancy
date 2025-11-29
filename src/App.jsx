@@ -1,10 +1,17 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Home from './pages/home';
+import About from './pages/About';
+import NavBar from './components/Navbar';
 const App = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">Welcome to Beam Engineering Consultancy Pulchowk,Lalitpur </h1>
-    </div>
+    <Router>
+      <NavBar />  
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+      </Routes>
+    </Router> 
   );
 }
 
