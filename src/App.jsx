@@ -3,7 +3,7 @@ import React from 'react';
 const App = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">Welcome to Beam Engineering Consultancy</h1>
+      <h1 className="text-4xl font-bold text-blue-600">Welcome to Beam Engineering Consultancy Pulchowk,Lalitpur </h1>
     </div>
   );
 }
