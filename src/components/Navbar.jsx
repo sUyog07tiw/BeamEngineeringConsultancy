@@ -7,11 +7,11 @@ const NavBar = () => {
       
       {/* DESKTOP NAV */}
       <div className="hidden md:flex items-center justify-between h-20 px-10 lg:px-20 xl:px-32">
-      <div className="flex flex-row items-center justify-between w-full">
+      <div className="m-10 flex flex-row items-center justify-between w-full">
       
 
         {/* LEFT MENU */}
-        <div className="flex items-center gap-5 space-x-10">
+        <div className="p-5 flex items-center gap-5 space-x-10">
           <Link to="/" className="nav-link text-white">Home</Link>
           <Link to="/about" className="nav-link text-white">About</Link>
         </div>
