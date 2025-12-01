@@ -1,29 +1,18 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Button = ({ children, onClick, type = "button", variant = "primary", disabled = false }) => {
-  const baseStyle =
-    "px-4 py-2 rounded-lg font-semibold transition duration-200";
-
+const Button = ({ children, variant = 'primary', size = 'md', to, href, className = '', ...props }) => {
   const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-gray-200 text-black hover:bg-gray-300",
-    danger: "bg-red-600 text-white hover:bg-red-700",
-    success: "bg-green-600 text-white hover:bg-green-700",
-    outline: "border border-gray-400 text-gray-700 hover:bg-gray-100",
+    primary: 'bg-black text-white hover:bg-gray-900',
+    secondary: 'bg-white text-black border-2 border-black hover:bg-gray-100',
+    outline: 'bg-transparent text-black border-2 border-black hover:bg-black hover:text-white',
   };
+  const sizes = { sm: 'px-6 py-3 text-sm', md: 'px-10 py-4 text-lg', lg: 'px-14 py-6 text-xl' };
+  const base = `inline-block font-medium tracking-widest uppercase transition-all duration-300 ${variants[variant]} ${sizes[size]} ${className}`;
 
-  return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={`${baseStyle} ${variants[variant]} ${
-        disabled ? "opacity-50 cursor-not-allowed" : ""
-      }`}
-    >
-      {children}
-    </button>
-  );
+  if (to) return <Link to={to} className={base} {...props}>{children}</Link>;
+  if (href) return <a href={href} target="_blank" rel="noopener noreferrer" className={base} {...props}>{children}</a>;
+  return <button className={base} {...props}>{children}</button>;
 };
 
 export default Button;
