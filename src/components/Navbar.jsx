@@ -1,56 +1,88 @@
+// src/components/NavBar.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/Logo.png'; // make sure the file name matches exactly
 
 const NavBar = () => {
+  const location = useLocation();
+
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10">
-      
-      {/* DESKTOP NAV */}
-      <div className="hidden md:flex items-center justify-between h-20 px-10 lg:px-20 xl:px-32">
-      <div className="m-10 flex flex-row items-center justify-between w-full">
-      
+    <nav className="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 bg-[#D4B65A] shadow-lg">
 
-        {/* LEFT MENU */}
-        <div className="p-5 flex items-center gap-5 space-x-10">
-          <Link to="/" className="nav-link text-white">Home</Link>
-          <Link to="/about" className="nav-link text-white">About</Link>
+      {/* DESKTOP */}
+      <div className="hidden md:flex items-center justify-between h-full px-8 lg:px-16">
+
+        {/* LEFT LINKS */}
+        <div className="flex items-center gap-12 lg:gap-20">
+          {navItems.slice(0, 2).map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={`text-[#0A1A2F] text-sm lg:text-base tracking-widest font-medium uppercase transition-all
+                ${location.pathname === item.path ? 'opacity-100' : 'opacity-70 hover:opacity-100'}
+              `}
+            >
+              {item.name}
+              {location.pathname === item.path && (
+                <div className="h-0.5 bg-[#0A1A2F] mt-1 w-8 mx-auto" />
+              )}
+            </Link>
+          ))}
         </div>
 
-        {/* CENTER LOGO */}
-        <div className="flex flex-col items-center leading-tight">
-          <h1 className="text-4xl font-light tracking-[0.25em] text-white">
-            BEAM
-          </h1>
-          <p className="text-[0.55rem] text-gray-400 tracking-[0.5em] uppercase">
-            Engineering Consultancy
-          </p>
-        </div>
+        {/* CENTER LOGO + TEXT */}
+        <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-4">
+          <img
+            src={logo}
+            alt="Beam Engineering Consultancy"
+            className="h-10 md:h-12 object-contain"
+          />
+          <div className="text-center leading-none">
+            <h1 className="text-5xl md:text-6xl font-thin text-[#0A1A2F]">
+              BEAM
+            </h1>
+            <p className="text-[#0A1A2F]/80 text-[10px] md:text-xs tracking-[0.6em] uppercase -mt-1">
+              ENGINEERING CONSULTANCY
+            </p>
+          </div>
+        </Link>
 
-        {/* RIGHT MENU */}
-        <div className="flex items-center gap-5 space-x-10">
-          <Link to="/services" className="nav-link text-white">Services</Link>
-          <Link to="/contact" className="nav-link text-white">Contact</Link>
+        {/* RIGHT LINKS */}
+        <div className="flex items-center gap-12 lg:gap-20">
+          {navItems.slice(2).map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={`text-[#0A1A2F] text-sm lg:text-base tracking-widest font-medium uppercase transition-all
+                ${location.pathname === item.path ? 'opacity-100' : 'opacity-70 hover:opacity-100'}
+              `}
+            >
+              {item.name}
+              {location.pathname === item.path && (
+                <div className="h-0.5 bg-[#0A1A2F] mt-1 w-8 mx-auto" />
+              )}
+            </Link>
+          ))}
         </div>
-
       </div>
 
-      {/* MOBILE NAV */}
-      <div className="md:hidden flex flex-col items-center py-4 space-y-3">
-
-        <div className="flex space-x-6 text-gray-300 text-sm uppercase tracking-wider">
-          <Link to="/" className="mobile-link">Home</Link>
-          <Link to="/about" className="mobile-link">About</Link>
-          <Link to="/services" className="mobile-link">Services</Link>
-          <Link to="/contact" className="mobile-link">Contact</Link>
-        </div>
-
-        <h1 className="text-3xl text-white font-light tracking-[0.2em]">BEAM</h1>
-        <p className="text-[0.55rem] text-gray-400 tracking-[0.4em] uppercase">
-          Engineering Consultancy
-        </p>
+      {/* MOBILE */}
+      <div className="md:hidden flex items-center justify-center h-full gap-3 px-6">
+        <img src={logo} alt="Beam" className="h-9 object-contain" />
+        <div className="text-center leading-none">
+          <div className="text-4xl font-thin text-[#0A1A2F]">BEAM</div>
+          <div className="text-[9px] text-[#0A1A2F]/80 tracking-[0.5em] uppercase -mt-1">
+            ENGINEERING CONSULTANCY
+          </div>
         </div>
       </div>
-
     </nav>
   );
 };
