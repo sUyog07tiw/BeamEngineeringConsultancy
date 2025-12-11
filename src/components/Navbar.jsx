@@ -1,7 +1,7 @@
 // src/components/NavBar.jsx
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/Logo.png'; // make sure the file name matches exactly
+import logo from '../assets/Logo.png';
 
 const NavBar = () => {
   const location = useLocation();
@@ -14,12 +14,12 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 bg-[#D4B65A] shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-20 md:h-24 bg-[#D4B65A] shadow-lg">
 
-      {/* DESKTOP */}
-      <div className="hidden md:flex items-center justify-between h-full px-8 lg:px-16">
+      {/* DESKTOP – Clean & Spacious */}
+      <div className="hidden md:flex items-center justify-between h-full px-10 lg:px-20">
 
-        {/* LEFT LINKS */}
+        {/* Left Links */}
         <div className="flex items-center gap-12 lg:gap-20">
           {navItems.slice(0, 2).map((item) => (
             <Link
@@ -37,24 +37,24 @@ const NavBar = () => {
           ))}
         </div>
 
-        {/* CENTER LOGO + TEXT */}
-        <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-4">
-          <img
-            src={logo}
-            alt="Beam Engineering Consultancy"
-            className="h-10 md:h-12 object-contain"
-          />
-          <div className="text-center leading-none">
-            <h1 className="text-5xl md:text-6xl font-thin text-[#0A1A2F]">
+        {/* CENTER LOGO + TEXT – Spacious & Elegant */}
+        <Link to="/" className="flex items-center gap-6">
+          <img src={logo} alt="Beam Logo" className="h-14 md:h-16 object-contain" />
+
+          <div className="leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-thin tracking-widest text-[#0A1A2F]">
               BEAM
             </h1>
-            <p className="text-[#0A1A2F]/80 text-[10px] md:text-xs tracking-[0.6em] uppercase -mt-1">
+            <p className="text-[#0A1A2F]/85 text-[11px] md:text-xs tracking-[0.7em] uppercase mt-1">
               ENGINEERING CONSULTANCY
+            </p>
+            <p className="text-[#0A1A2F]/60 text-[8px] md:text-[9px] tracking-[0.5em] uppercase mt-1">
+              BUILDING ENGINEERING & ARCHITECTURAL MULTITUDE
             </p>
           </div>
         </Link>
 
-        {/* RIGHT LINKS */}
+        {/* Right Links */}
         <div className="flex items-center gap-12 lg:gap-20">
           {navItems.slice(2).map((item) => (
             <Link
@@ -73,14 +73,24 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* MOBILE */}
-      <div className="md:hidden flex items-center justify-center h-full gap-3 px-6">
-        <img src={logo} alt="Beam" className="h-9 object-contain" />
-        <div className="text-center leading-none">
-          <div className="text-4xl font-thin text-[#0A1A2F]">BEAM</div>
-          <div className="text-[9px] text-[#0A1A2F]/80 tracking-[0.5em] uppercase -mt-1">
-            ENGINEERING CONSULTANCY
+      {/* MOBILE – Clean & Balanced */}
+      <div className="md:hidden flex items-center justify-between h-full px-6">
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Beam" className="h-11 object-contain" />
+          <div className="leading-none">
+            <div className="text-4xl font-thin text-[#0A1A2F]">BEAM</div>
+            <div className="text-[9px] text-[#0A1A2F]/90 tracking-[0.5em] uppercase -mt-1">
+              ENGINEERING CONSULTANCY
+            </div>
           </div>
+        </div>
+
+        <div className="flex gap-4 text-xs tracking-widest text-[#0A1A2F]">
+          {navItems.map((item) => (
+            <Link key={item.name} to={item.path}>
+              {item.name}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>

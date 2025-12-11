@@ -1,69 +1,99 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+// src/pages/About.jsx
+import React, { useRef } from 'react';
+import Button from '../components/Button';
+
+const team = [
+  { name: "Basu Dev Tiwari",       role: "Managing Director",          phone: "9851048896", img: "/team/basu-dev.jpg" },
+  { name: "Er. Briraj Tiwari",     role: "Civil Engineer",             phone: "9851314760", img: "/team/briraj.jpg" },
+  { name: "Er. Utsav Shakya",      role: "Civil Engineer",             phone: "9851324141", img: "/team/utsav.jpg" },
+  { name: "Er. Rahul Yadav",       role: "Senior Structural Engineer", img: "/team/rahul.jpg" },
+  { name: "Er. Samir Tapendra",    role: "Structural Design Engineer", img: "/team/samir.jpg" },
+  { name: "Suman Shrestha",        role: "Site Engineer & Project Coordinator", img: "/team/suman.jpg" },
+];
 
 const About = () => {
+  const teamSectionRef = useRef(null);
+
+  const scrollToTeam = () => {
+    teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
-      {/* Full-screen Hero Section – Black & Powerful */}
-      <section className="relative h-screen bg-black flex items-center justify-center overflow-hidden">
-        {/* Optional subtle background pattern or video can go here later */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black"></div>
+      {/* HERO – Clean with "Meet the Team" Button */}
+      <section className="relative h-screen bg-[#0A1A2F] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1A2F] via-[#0f2744] to-[#0A1A2F]"></div>
 
-        <div className="relative z-10 text-center px-8 max-w-7xl mx-auto">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-thin tracking-widest text-white mb-8">
-            ABOUT US
+        <div className="relative text-center px-8 z-10">
+          <h1 className="text-7xl md:text-9xl lg:text-10xl font-thin tracking-widest text-white">
+            ABOUT
           </h1>
-          <div className="h-px bg-white/20 w-32 mx-auto mb-8"></div>
-          <p className="text-gray-400 text-lg md:text-xl lg:text-2xl tracking-wide max-w-4xl mx-auto leading-relaxed">
-            Beam Engineering Consultancy is a family-owned structural and civil engineering firm
-            dedicated to delivering precision, safety, and excellence in every project.
-          </p>
-        </div>
 
-        {/* Subtle scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/40 rounded-full mt-2 animate-bounce"></div>
+          {/* Leadership & Team + Golden Lines */}
+          <div className="flex items-center justify-center mt-8">
+            <div className="h-px bg-[#D4B65A] w-32 md:w-40 lg:w-48"></div>
+            <div className="mx-8 text-center">
+              <p className="text-[#D4B65A] text-base md:text-lg tracking-[0.3em] uppercase font-light leading-tight">
+                LEADERSHIP & TEAM
+              </p>
+              <p className="text-gray-300 text-sm md:text-base mt-3 max-w-2xl leading-relaxed">
+                A dedicated team of engineers and professionals delivering precision, safety, and excellence in every project.
+              </p>
+            </div>
+            <div className="h-px bg-[#D4B65A] w-32 md:w-40 lg:w-48"></div>
+          </div>
+
+          {/* MEET THE TEAM BUTTON – Smooth Scroll */}
+          <div className="mt-20">
+            <Button
+              size="lg"
+              onClick={scrollToTeam}
+              className="bg-[#D4B65A] text-[#0A1A2F] hover:bg-white transition"
+            >
+              Meet the Team
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Content Section – Clean & Spacious */}
-      <section className="py-32 px-8 bg-white">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-thin text-gray-900 mb-12 tracking-wider">
-            Built on Trust. <br />
-            Engineered for Tomorrow.
-          </h2>
+      {/* TEAM SECTION – This is where it scrolls to */}
+      <section ref={teamSectionRef} className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
 
-          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-16 max-w-3xl mx-auto">
-            Founded and led by experienced engineers, we bring decades of expertise in structural design,
-            project supervision, and sustainable engineering solutions. From residential buildings to
-            large-scale infrastructure — we turn vision into reality with uncompromising quality.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-12 mt-20">
-            <div>
-              <h3 className="text-2xl font-light text-gray-800 mb-4">Precision</h3>
-              <p className="text-gray-600">Every calculation, every detail — executed with absolute accuracy.</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-light text-gray-800 mb-4">Safety</h3>
-              <p className="text-gray-600">Your structure’s integrity is our highest priority — always.</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-light text-gray-800 mb-4">Family Values</h3>
-              <p className="text-gray-600">Personalized service, long-term relationships, and trust above all.</p>
-            </div>
+          {/* Leadership – Top 3 */}
+          <div className="grid md:grid-cols-3 gap-16 mb-20">
+            {team.slice(0, 3).map((member) => (
+              <div key={member.name} className="group text-center">
+                <div className="relative overflow-hidden mb-6 rounded-lg">
+                  <img src={member.img} alt={member.name} className="w-full h-96 object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A2F]/80 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-medium text-[#0A1A2F]">{member.name}</h3>
+                <p className="text-[#D4B65A] text-lg tracking-wider mt-2 font-medium">{member.role}</p>
+                {member.phone && (
+                  <a href={`tel:+977${member.phone}`} className="block text-gray-700 text-lg mt-3 hover:text-[#0A1A2F] transition font-medium">
+                    {member.phone}
+                  </a>
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="mt-24">
-            <Link
-              to="/contact"
-              className="inline-block bg-black text-white px-12 py-5 text-lg tracking-widest uppercase hover:bg-gray-900 transition duration-300"
-            >
-              Start Your Project
-            </Link>
+          {/* Supporting Team */}
+          <div className="grid md:grid-cols-3 gap-12">
+            {team.slice(3).map((member) => (
+              <div key={member.name} className="group text-center">
+                <img src={member.img} alt={member.name} className="w-full h-80 object-cover rounded-lg grayscale group-hover:grayscale-0 transition" />
+                <h3 className="text-xl font-medium text-[#0A1A2F] mt-6">{member.name}</h3>
+                <p className="text-[#D4B65A] text-sm tracking-wider mt-1">{member.role}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-24">
+            <Button size="lg" to="/contact">
+              Contact the Team
+            </Button>
           </div>
         </div>
       </section>
