@@ -1,100 +1,88 @@
 // src/components/NavBar.jsx
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/Logo.png';
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+import logo from "../assets/Logo.png";
 
-const NavBar = () => {
+export default function NavBar() {
   const location = useLocation();
+  const [open, setOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-20 md:h-24 bg-[#D4B65A] shadow-lg">
-
-      {/* DESKTOP – Clean & Spacious */}
-      <div className="hidden md:flex items-center justify-between h-full px-10 lg:px-20">
-
-        {/* Left Links */}
-        <div className="flex items-center gap-12 lg:gap-20">
-          {navItems.slice(0, 2).map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`text-[#0A1A2F] text-sm lg:text-base tracking-widest font-medium uppercase transition-all
-                ${location.pathname === item.path ? 'opacity-100' : 'opacity-70 hover:opacity-100'}
-              `}
-            >
-              {item.name}
-              {location.pathname === item.path && (
-                <div className="h-0.5 bg-[#0A1A2F] mt-1 w-8 mx-auto" />
-              )}
+    <header className="fixed top-0 inset-x-0 z-50">
+      {/* Glass container */}
+      <nav className="mx-auto ">
+        <div className=" bg-[#D4B65A] md:px-5 shadow-xl">
+          <div className="flex h-20 items-center justify-between px-6">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-4">
+              <img src={logo} alt="BEAM" className="h-12 object-contain" />
+              <div className="hidden sm:block leading-tight">
+                <h1 className="text-3xl font-light tracking-widest text-[#0A1A2F]">BEAM</h1>
+                <p className="text-[10px] tracking-[0.4em] uppercase text-[#0A1A2F]/80">
+                  Engineering Consultancy
+                </p>
+              </div>
             </Link>
-          ))}
-        </div>
 
-        {/* CENTER LOGO + TEXT – Spacious & Elegant */}
-        <Link to="/" className="flex items-center gap-6">
-          <img src={logo} alt="Beam Logo" className="h-14 md:h-16 object-contain" />
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-10">
+              {navItems.map((item) => {
+                const active = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`relative text-sm uppercase tracking-widest transition-all
+                      ${active ? "text-[#0A1A2F]" : "text-[#0A1A2F]/70 hover:text-[#0A1A2F]"}`}
+                  >
+                    {item.name}
+                    {active && (
+                      <span className="absolute -bottom-2 left-1/2 h-[2px] w-6 -translate-x-1/2 rounded-full bg-[#0A1A2F]" />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
 
-          <div className="leading-tight">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-thin tracking-widest text-[#0A1A2F]">
-              BEAM
-            </h1>
-            <p className="text-[#0A1A2F]/85 text-[11px] md:text-xs tracking-[0.7em] uppercase mt-1">
-              ENGINEERING CONSULTANCY
-            </p>
-            <p className="text-[#0A1A2F]/60 text-[8px] md:text-[9px] tracking-[0.5em] uppercase mt-1">
-              BUILDING ENGINEERING & ARCHITECTURAL MULTITUDE
-            </p>
+            {/* Mobile Button */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden text-[#0A1A2F]"
+            >
+              {open ? <X size={26} /> : <Menu size={26} />}
+            </button>
           </div>
-        </Link>
-
-        {/* Right Links */}
-        <div className="flex items-center gap-12 lg:gap-20">
-          {navItems.slice(2).map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`text-[#0A1A2F] text-sm lg:text-base tracking-widest font-medium uppercase transition-all
-                ${location.pathname === item.path ? 'opacity-100' : 'opacity-70 hover:opacity-100'}
-              `}
-            >
-              {item.name}
-              {location.pathname === item.path && (
-                <div className="h-0.5 bg-[#0A1A2F] mt-1 w-8 mx-auto" />
-              )}
-            </Link>
-          ))}
         </div>
-      </div>
 
-      {/* MOBILE – Clean & Balanced */}
-      <div className="md:hidden flex items-center justify-between h-full px-6">
-        <div className="flex items-center gap-3">
-          <img src={logo} alt="Beam" className="h-11 object-contain" />
-          <div className="leading-none">
-            <div className="text-4xl font-thin text-[#0A1A2F]">BEAM</div>
-            <div className="text-[9px] text-[#0A1A2F]/90 tracking-[0.5em] uppercase -mt-1">
-              ENGINEERING CONSULTANCY
+        {/* Mobile Menu */}
+        {open && (
+          <div className="md:hidden mt-3 rounded-2xl bg-[#D4B65A]/90 backdrop-blur-md shadow-lg">
+            <div className="flex flex-col divide-y divide-[#0A1A2F]/20">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setOpen(false)}
+                  className={`px-6 py-4 text-sm uppercase tracking-widest transition-all
+                    ${location.pathname === item.path
+                      ? "text-[#0A1A2F] font-medium"
+                      : "text-[#0A1A2F]/70 hover:text-[#0A1A2F]"}`}
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
           </div>
-        </div>
-
-        <div className="flex gap-4 text-xs tracking-widest text-[#0A1A2F]">
-          {navItems.map((item) => (
-            <Link key={item.name} to={item.path}>
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </nav>
+        )}
+      </nav>
+    </header>
   );
-};
-
-export default NavBar;
+}
