@@ -1,7 +1,7 @@
 // src/pages/About.jsx
 import React, { useRef } from 'react';
-import Button from '../components/Button';
-import aboutImg from '../assets/images/about.jpg';  // Your image path
+import { Link, useNavigate } from 'react-router-dom';  // Added useNavigate
+import aboutImg from '../assets/images/website-images/about.jpg';  // Your about hero image
 
 const team = [
   { 
@@ -15,7 +15,7 @@ const team = [
     name: "Er. Biraj Tiwari",     
     role: "Civil Engineer",             
     phone: "9851314760", 
-    img: "/team/briraj.jpg",
+    img: "/team/biraj.jpg",
     desc: "Expert in civil design, site execution, feasibility studies, and sustainable construction practices."
   },
   { 
@@ -47,27 +47,33 @@ const team = [
 
 const About = () => {
   const teamSectionRef = useRef(null);
+  const navigate = useNavigate();  // For programmatic navigation
 
   const scrollToTeam = () => {
     teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Navigate to Contact page and scroll to the very top
+  const goToContactTop = () => {
+    navigate('/contact');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);  // Small delay to ensure page loads first
+  };
+
   return (
     <>
-      {/* HERO – Exactly like Home page */}
+      {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src={aboutImg}
             alt="BEAM Engineering Consultancy"
             className="h-full w-full object-cover"
           />
-          {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         </div>
 
-        {/* Centered Content */}
         <div className="relative z-10 flex h-full items-center justify-center px-6">
           <div className="max-w-5xl text-center">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-widest text-white">
@@ -84,15 +90,14 @@ const About = () => {
               </p>
             </div>
 
-            {/* Meet the Team Button */}
-            <div className="mt-14">
-              <Button
-                size="lg"
+            {/* "Meet the Team" button */}
+            <div className="mt-20 flex justify-center">
+              <button
                 onClick={scrollToTeam}
-                className="rounded-full bg-[#D4B65A] px-10 py-4 text-lg uppercase tracking-widest text-[#0A1A2F] hover:bg-[#c2a54d] transition"
+                className="rounded-full bg-[#D4B65A] px-10 py-4 text-base uppercase tracking-widest text-[#0A1A2F] font-medium transition duration-300 hover:bg-[#c2a54d] hover:shadow-xl"
               >
                 Meet the Team
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -149,10 +154,14 @@ const About = () => {
             ))}
           </div>
 
+          {/* Contact the Team button – Same style + scrolls to top of Contact page */}
           <div className="text-center mt-24">
-            <Button size="lg" to="/contact">
+            <button
+              onClick={goToContactTop}
+              className="rounded-full bg-[#D4B65A] px-10 py-4 text-base uppercase tracking-widest text-[#0A1A2F] font-medium transition duration-300 hover:bg-[#c2a54d] hover:shadow-xl"
+            >
               Contact the Team
-            </Button>
+            </button>
           </div>
         </div>
       </section>

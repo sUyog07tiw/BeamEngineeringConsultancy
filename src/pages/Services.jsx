@@ -1,7 +1,11 @@
+// src/pages/Services.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import servicesImg from '../assets/images/website-images/services.jpg';  // Your services hero image
 
 const Services = () => {
+  const navigate = useNavigate();
+
   const services = [
     { title: "Structural Design & Analysis", desc: "Complete structural engineering for residential, commercial, and industrial projects with latest standards." },
     { title: "Civil Engineering Consultancy", desc: "Site supervision, feasibility studies, project planning, and construction management." },
@@ -11,20 +15,38 @@ const Services = () => {
     { title: "Government Approval Support", desc: "Full assistance with drawings and municipal approvals in Nepal." }
   ];
 
+  // Navigate to Contact page and scroll to top
+  const goToContactTop = () => {
+    navigate('/contact');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-screen bg-black flex items-center justify-center">
-        <div className="absolute inset-0 bg-black"></div>
-        <div className="relative text-center px-8">
-          <h1 className="text-7xl md:text-9xl lg:text-10xl font-thin tracking-widest text-white">
-            SERVICES
-          </h1>
-          <div className="h-px bg-white/20 w-40 mx-auto mt-8"></div>
+      {/* HERO – Full-screen background with services.jpg */}
+      <section className="relative h-screen w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={servicesImg}
+            alt="BEAM Engineering Services"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+        </div>
+
+        <div className="relative z-10 flex h-full items-center justify-center px-6">
+          <div className="text-center">
+            <h1 className="text-7xl md:text-9xl lg:text-10xl font-thin tracking-widest text-white">
+              SERVICES
+            </h1>
+            <div className="mx-auto mt-8 h-px w-40 bg-white/20" />
+          </div>
         </div>
       </section>
 
-      {/* Services List */}
+      {/* Services List Section */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-2 gap-16">
@@ -41,13 +63,14 @@ const Services = () => {
             ))}
           </div>
 
+          {/* "Discuss Your Project" Button – Gold style, same as other pages */}
           <div className="text-center mt-24">
-            <Link
-              to="/contact"
-              className="inline-block bg-black text-white px-12 py-5 text-lg tracking-widest uppercase hover:bg-gray-900 transition"
+            <button
+              onClick={goToContactTop}
+              className="rounded-full bg-[#D4B65A] px-10 py-4 text-base uppercase tracking-widest text-[#0A1A2F] font-medium transition duration-300 hover:bg-[#c2a54d] hover:shadow-xl"
             >
               Discuss Your Project
-            </Link>
+            </button>
           </div>
         </div>
       </section>
