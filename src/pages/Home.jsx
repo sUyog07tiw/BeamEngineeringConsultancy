@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
-import hero from '../assets/images/website-images/hero.avif';  // Your hero image
+import hero from '../assets/images/website-images/hero.avif';
 
 const services = [
   {
@@ -59,10 +59,93 @@ const Home = () => {
         image={hero}
       />
 
-      {/* Services Overview Section */}
+      {/* Stats Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div className="group">
+              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+                21+
+              </h3>
+              <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
+                Years of Excellence
+              </p>
+            </div>
+            <div className="group">
+              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+                500+
+              </h3>
+              <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
+                Projects Delivered
+              </p>
+            </div>
+            <div className="group">
+              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+                98%
+              </h3>
+              <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
+                Client Satisfaction
+              </p>
+            </div>
+            <div className="group">
+              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+                300+
+              </h3>
+              <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
+                Trusted Clients
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Residential Projects */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight tracking-widest text-[#0A1A2F]">
+              Featured Residential Projects
+            </h2>
+            <div className="mx-auto mt-6 h-px w-48 bg-[#D4B65A]/60" />
+            <p className="text-lg md:text-xl text-gray-600 mt-6 max-w-3xl mx-auto leading-relaxed">
+              We are proud to deliver luxury dream homes across Kathmandu Valley. From completed masterpieces to ongoing excellence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="group text-center">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
+              <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Budanilkantha Residence</h3>
+              <p className="text-gray-600">Completed Luxury Home</p>
+            </div>
+
+            <div className="group text-center">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
+              <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Sunakothi Residence</h3>
+              <p className="text-gray-600">Ongoing Construction</p>
+            </div>
+
+            <div className="group text-center">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
+              <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Balkumari (Imadol) Residence</h3>
+              <p className="text-gray-600">Ongoing Construction</p>
+            </div>
+          </div>
+
+          <div className="text-center mt-16">
+            <Link
+              to="/services#construction-projects"
+              className="inline-block bg-[#D4B65A] text-[#0A1A2F] px-14 py-5 text-xl uppercase tracking-widest font-medium rounded-full hover:bg-[#c2a54d] transition duration-300 shadow-xl"
+            >
+              View Construction Projects
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-8">
-          {/* "OUR EXPERTISE" – Exact same font style as hero title */}
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-widest text-[#0A1A2F] leading-tight">
               <span className="font-bold text-[#D4B65A]">OUR</span> EXPERTISE
@@ -92,7 +175,6 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Explore All Services Button */}
           <div className="text-center mt-20">
             <Link
               to="/services"
