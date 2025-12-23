@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import hero from '../assets/images/website-images/fullhomeconstruction.jpg';
 
-// Correct imports – matching your folder "budanilkantha" and exact file names
+// Budanilkantha media
 import budan1 from '../assets/images/construction-projects/budanilkantha/budanilkantha1.jpeg';
 import budan2 from '../assets/images/construction-projects/budanilkantha/budanilkantha2.jpeg';
 import budan3 from '../assets/images/construction-projects/budanilkantha/budanilkantha3.jpeg';
@@ -11,8 +11,12 @@ import budanVideo1 from '../assets/images/construction-projects/budanilkantha/bu
 import budanVideo2 from '../assets/images/construction-projects/budanilkantha/budanilkantha5.jpeg.mp4';
 import budanVideo3 from '../assets/images/construction-projects/budanilkantha/budanilkantha6.jpeg.mp4';
 
+// Sunakothi media
 import sunakothi1 from '../assets/images/construction-projects/sunakothi/sunakoti1.jpeg';
 import sunakothiVideo1 from '../assets/images/construction-projects/sunakothi/sunakoti2.jpeg.mp4';
+
+// Balkumari media – your new photo
+import balkumari1 from '../assets/images/construction-projects/balkumari/balkumari1.jpeg'; 
 
 const FullHomeConstruction = () => {
   const navigate = useNavigate();
@@ -27,10 +31,12 @@ const FullHomeConstruction = () => {
   // Media arrays
   const budanilkanthaMedia = [budan1, budan2, budan3, budanVideo1, budanVideo2, budanVideo3];
   const sunakothiMedia = [sunakothi1, sunakothiVideo1];
+  const balkumariMedia = [balkumari1]; // Add more when you have them
 
   // Slider states
   const [budanIndex, setBudanIndex] = useState(0);
   const [sunakothiIndex, setSunakothiIndex] = useState(0);
+  const [balkumariIndex, setBalkumariIndex] = useState(0);
 
   // Video refs
   const budanVideoRef = useRef(null);
@@ -186,7 +192,7 @@ const FullHomeConstruction = () => {
             </div>
           </div>
 
-          {/* Balkumari Project – Placeholder */}
+          {/* Balkumari Project – Now with real photo */}
           <div className="mb-32">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="order-2 md:order-1">
@@ -200,10 +206,27 @@ const FullHomeConstruction = () => {
                   Ongoing Construction
                 </span>
               </div>
-              <div className="order-1 md:order-2">
-                <div className="bg-gray-200 border-2 border-dashed rounded-2xl w-full h-96 shadow-2xl flex items-center justify-center">
-                  <p className="text-gray-500 text-xl">Photos & Videos Coming Soon</p>
-                </div>
+
+              <div className="order-1 md:order-2 relative">
+                <img src={balkumariMedia[balkumariIndex]} alt="Balkumari Residence" className="w-full h-96 lg:h-full object-cover rounded-2xl shadow-2xl" />
+
+                {/* Next/Previous (will work when you add more photos) */}
+                {balkumariMedia.length > 1 && (
+                  <>
+                    <button onClick={() => prevSlide(setBalkumariIndex, balkumariMedia, balkumariIndex)} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-4 rounded-full hover:bg-[#D4B65A] transition text-2xl">
+                      ‹
+                    </button>
+                    <button onClick={() => nextSlide(setBalkumariIndex, balkumariMedia, balkumariIndex)} className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 text-white p-4 rounded-full hover:bg-[#D4B65A] transition text-2xl">
+                      ›
+                    </button>
+
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                      {balkumariMedia.map((_, i) => (
+                        <div key={i} className={`w-3 h-3 rounded-full transition ${i === balkumariIndex ? 'bg-[#D4B65A]' : 'bg-white/50'}`} />
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
