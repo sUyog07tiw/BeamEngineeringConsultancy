@@ -20,7 +20,7 @@ const HeroSection = ({ title, subtitle, image }) => {
           {/* Headline – Even smaller for more elegance */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight tracking-widest text-white leading-tight">
             <span className="font-bold text-[#D4B65A]">ELEGANT DREAM HOMES</span> & 
-            <span className="font-bold text-[#D4B65A]">ICONIC COMMERCIAL SPACES</span><br/>
+            <span className="font-bold text-[#D4B65A]"> ICONIC COMMERCIAL SPACES</span><br/>
             CRAFTED FOR EXCELLENCE
           </h1>
 

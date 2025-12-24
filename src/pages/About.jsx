@@ -19,10 +19,10 @@ const team = [
     desc: "Expert in civil design, site execution, feasibility studies, and sustainable construction practices."
   },
   { 
-    name: "Er. Utsav Shakya",      
+    name: "Er. Utsab Shakya",      
     role: "Civil Engineer",             
     phone: "9851324141", 
-    img: "/team/utsav.jpg",
+    img: "/team/utsab.jpg",
     desc: "Specializes in civil detailing, drainage, roadworks, and compliance with Nepali building codes."
   },
   { 

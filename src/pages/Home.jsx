@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import hero from '../assets/images/website-images/hero.avif';
 
+// Import Balkumari photo
+import balkumariImg from '../assets/images/construction-projects/balkumari/balkumari1.jpeg'; // Adjust to .jpg if needed
+
 const services = [
   {
     title: "Structural Design & Analysis",
@@ -37,8 +40,9 @@ const Home = () => {
       <HeroSection
         title={
           <>
-            <span className="font-bold text-[#D4B65A]">ELEGANT DREAM HOMES</span> & 
-            <span className="font-bold text-[#D4B65A]">ICONIC COMMERCIAL SPACES</span>
+            <span className="font-bold text-[#D4B65A]">ELEGANT DREAM HOMES</span> 
+            
+            <span className="font-bold text-[#D4B65A]"> ]ICONIC COMMERCIAL SPACES</span>
             <br />
             CRAFTED FOR EXCELLENCE
           </>
@@ -49,10 +53,10 @@ const Home = () => {
               BEAM
             </span>
             <span className="block text-xl md:text-2xl lg:text-3xl tracking-wide text-gray-200">
-              Building Engineering & Architectural Multimind
+              Building Engineering & Architectural Multitude
             </span>
             <span className="block mt-8 text-lg md:text-xl lg:text-2xl tracking-wider text-gray-300">
-              Structural • Architectural • Engineering Consultancy
+              Structural • Architectural • Naksa Pass • Civil Engineering Consultancy
             </span>
           </>
         }
@@ -113,20 +117,29 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
+            {/* Budanilkantha */}
             <div className="group text-center">
               <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
               <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Budanilkantha Residence</h3>
               <p className="text-gray-600">Completed Luxury Home</p>
             </div>
 
+            {/* Sunakothi */}
             <div className="group text-center">
               <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
               <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Sunakothi Residence</h3>
               <p className="text-gray-600">Ongoing Construction</p>
             </div>
 
+            {/* Balkumari – Real photo */}
             <div className="group text-center">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
+              <div className="overflow-hidden rounded-xl mb-6 shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+                <img 
+                  src={balkumariImg} 
+                  alt="Balkumari (Imadol) Residence" 
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
               <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Balkumari (Imadol) Residence</h3>
               <p className="text-gray-600">Ongoing Construction</p>
             </div>
@@ -134,10 +147,10 @@ const Home = () => {
 
           <div className="text-center mt-16">
             <Link
-              to="/services#construction-projects"
+              to="/full-home-construction"
               className="inline-block bg-[#D4B65A] text-[#0A1A2F] px-14 py-5 text-xl uppercase tracking-widest font-medium rounded-full hover:bg-[#c2a54d] transition duration-300 shadow-xl"
             >
-              View Construction Projects
+              View Full Home Construction
             </Link>
           </div>
         </div>
