@@ -38,7 +38,7 @@ const Contact = () => {
             <div className="mt-12 flex items-center justify-center">
               <Button
                 onClick={scrollToContactInfo}
-                className="rounded-full bg-[#D4B65A] text-[#0A1A2F] hover:bg-[#c2a54d] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D4B65A]/60 focus:ring-offset-2"
+                className="rounded-full bg-lime-800 text-lime-50 hover:bg-lime-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-lime-700/60 focus:ring-offset-2"
               >
                 Consult Our Experts
               </Button>
@@ -61,7 +61,7 @@ const Contact = () => {
           <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {/* Phone */}
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-lg">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#D4B65A]/15 text-[#0A1A2F]">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime-800/15 text-[#0A1A2F]">
                 <Phone className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="mt-6 text-xl font-medium tracking-wider text-gray-900 text-center">Call Us</h3>
@@ -69,21 +69,21 @@ const Contact = () => {
                 <div className="grid grid-cols-2  gap-x-3 gap-y-3 justify-items-center">
                   <a
                     href="tel:+9779851048896"
-                    className="text-2xl font-light tracking-wide text-gray-900 hover:text-gray-600 transition focus:outline-none focus:ring-2 focus:ring-[#D4B65A]/60 focus:ring-offset-2 rounded"
+                    className="text-2xl font-light tracking-wide text-gray-900 hover:text-gray-600 transition focus:outline-none focus:ring-2 focus:ring-lime-700/60 focus:ring-offset-2 rounded"
                     aria-label="Call 9851048896"
                   >
                     9851048896,
                   </a>
                   <a
                     href="tel:+9779851314760"
-                    className="text-2xl font-light tracking-wide text-gray-900 hover:text-gray-600 transition focus:outline-none focus:ring-2 focus:ring-[#D4B65A]/60 focus:ring-offset-2 rounded"
+                    className="text-2xl font-light tracking-wide text-gray-900 hover:text-gray-600 transition focus:outline-none focus:ring-2 focus:ring-lime-700/60 focus:ring-offset-2 rounded"
                     aria-label="Call 9851314760"
                   >
                     9851314760,
                   </a>
                   <a
                     href="tel:+9779851324141"
-                    className=" text-2xl font-light tracking-wide text-gray-900 hover:text-gray-600 transition focus:outline-none focus:ring-2 focus:ring-[#D4B65A]/60 focus:ring-offset-2 rounded"
+                    className=" text-2xl font-light tracking-wide text-gray-900 hover:text-gray-600 transition focus:outline-none focus:ring-2 focus:ring-lime-700/60 focus:ring-offset-2 rounded"
                     aria-label="Call 9851324141"
                   >
                     9851324141
@@ -94,14 +94,14 @@ const Contact = () => {
 
             {/* Email */}
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-lg">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#D4B65A]/15 text-[#0A1A2F]">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime-800/15 text-[#0A1A2F]">
                 <Mail className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="mt-6 text-xl font-medium tracking-wider text-gray-900 text-center">Email</h3>
               <p className="mt-4 text-center text-gray-600">Send us your requirements anytime.</p>
               <a
                 href="mailto:beamconsultancy123@gmail.com"
-                className="mt-6 block text-center text-lg sm:text-xl font-light text-gray-900 hover:text-gray-600 transition break-all focus:outline-none focus:ring-2 focus:ring-[#D4B65A]/60 focus:ring-offset-2 rounded"
+                className="mt-6 block text-center text-lg sm:text-xl font-light text-gray-900 hover:text-gray-600 transition break-all focus:outline-none focus:ring-2 focus:ring-lime-700/60 focus:ring-offset-2 rounded"
               >
                 beamconsultancy123@gmail.com
               </a>
@@ -109,7 +109,7 @@ const Contact = () => {
 
             {/* Instagram */}
             <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-lg">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#D4B65A]/15 text-[#0A1A2F]">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime-800/15 text-[#0A1A2F]">
                 <Instagram className="h-7 w-7" aria-hidden="true" />
               </div>
               <h3 className="mt-6 text-xl font-medium tracking-wider text-gray-900 text-center">Instagram</h3>
@@ -118,7 +118,7 @@ const Contact = () => {
                 href="https://www.instagram.com/beamengineering_consultancy/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 block text-center text-lg sm:text-xl font-light text-gray-900 hover:text-gray-600 transition break-all focus:outline-none focus:ring-2 focus:ring-[#D4B65A]/60 focus:ring-offset-2 rounded"
+                className="mt-6 block text-center text-lg sm:text-xl font-light text-gray-900 hover:text-gray-600 transition break-all focus:outline-none focus:ring-2 focus:ring-lime-700/60 focus:ring-offset-2 rounded"
               >
                 @beamengineering_consultancy
               </a>
@@ -128,7 +128,7 @@ const Contact = () => {
           {/* Opening Hours & Location */}
           <div className="mt-16 grid gap-8 md:grid-cols-2">
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-10 text-center shadow-sm">
-              <Clock className="mx-auto h-12 w-12 text-[#D4B65A]" aria-hidden="true" />
+              <Clock className="mx-auto h-12 w-12 text-lime-700" aria-hidden="true" />
               <h3 className="mt-6 text-2xl font-light tracking-wider text-gray-900">Opening Hours</h3>
               <p className="mt-5 text-lg text-gray-700 leading-loose">
                 Sunday – Friday<br />
@@ -137,7 +137,7 @@ const Contact = () => {
             </div>
 
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-10 text-center shadow-sm">
-              <MapPin className="mx-auto h-12 w-12 text-[#D4B65A]" aria-hidden="true" />
+              <MapPin className="mx-auto h-12 w-12 text-lime-700" aria-hidden="true" />
               <h3 className="mt-6 text-2xl font-light tracking-wider text-gray-900">Our Location</h3>
               <p className="mt-5 text-lg text-gray-700 leading-loose">
                 Pulchowk, Lalitpur<br />
@@ -167,7 +167,7 @@ const Contact = () => {
             <Button
               to="/"
               onClick={scrollToTop}
-              className="rounded-full bg-[#D4B65A] text-[#0A1A2F] hover:bg-[#c2a54d] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D4B65A]/60 focus:ring-offset-2"
+              className="rounded-full bg-lime-800 text-lime-50 hover:bg-lime-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-lime-700/60 focus:ring-offset-2"
             >
               Back to Home
             </Button>

@@ -40,20 +40,19 @@ const Home = () => {
       <HeroSection
         title={
           <>
-            <span className="font-bold text-[#D4B65A]">ELEGANT DREAM HOMES</span> 
-            
-            <span className="font-bold text-[#D4B65A]"> ]ICONIC COMMERCIAL SPACES</span>
+            <span className="font-bold text-lime-600">ELEGANT DREAM HOMES</span>&nbsp;&amp;&nbsp;
+            <span className="font-bold text-lime-600">ICONIC COMMERCIAL SPACES</span>
             <br />
             CRAFTED FOR EXCELLENCE
           </>
         }
         subtitle={
           <>
-            <span className="block text-3xl md:text-4xl lg:text-5xl tracking-widest uppercase font-extralight text-[#D4B65A] mb-6">
+            <span className="block text-3xl md:text-4xl lg:text-5xl tracking-widest uppercase font-extralight text-lime-600 mb-6">
               BEAM
             </span>
             <span className="block text-xl md:text-2xl lg:text-3xl tracking-wide text-gray-200">
-              Building Engineering & Architectural Multitude
+              Building Engineering & Architectural Multimind
             </span>
             <span className="block mt-8 text-lg md:text-xl lg:text-2xl tracking-wider text-gray-300">
               Structural • Architectural • Naksa Pass • Civil Engineering Consultancy
@@ -68,7 +67,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             <div className="group">
-              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+              <h3 className="text-5xl md:text-6xl font-bold text-lime-600 group-hover:scale-110 transition-transform duration-300">
                 21+
               </h3>
               <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
@@ -76,7 +75,7 @@ const Home = () => {
               </p>
             </div>
             <div className="group">
-              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+              <h3 className="text-5xl md:text-6xl font-bold text-lime-600 group-hover:scale-110 transition-transform duration-300">
                 500+
               </h3>
               <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
@@ -84,7 +83,7 @@ const Home = () => {
               </p>
             </div>
             <div className="group">
-              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+              <h3 className="text-5xl md:text-6xl font-bold text-lime-600 group-hover:scale-110 transition-transform duration-300">
                 98%
               </h3>
               <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
@@ -92,7 +91,7 @@ const Home = () => {
               </p>
             </div>
             <div className="group">
-              <h3 className="text-5xl md:text-6xl font-bold text-[#D4B65A] group-hover:scale-110 transition-transform duration-300">
+              <h3 className="text-5xl md:text-6xl font-bold text-lime-600 group-hover:scale-110 transition-transform duration-300">
                 300+
               </h3>
               <p className="text-xl md:text-2xl text-gray-700 mt-4 tracking-wide group-hover:text-[#0A1A2F] transition-colors duration-300">
@@ -110,7 +109,7 @@ const Home = () => {
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-extralight tracking-widest text-[#0A1A2F]">
               Featured Residential Projects
             </h2>
-            <div className="mx-auto mt-6 h-px w-48 bg-[#D4B65A]/60" />
+            <div className="mx-auto mt-6 h-px w-48 bg-lime-600/60" />
             <p className="text-lg md:text-xl text-gray-600 mt-6 max-w-3xl mx-auto leading-relaxed">
               We are proud to deliver luxury dream homes across Kathmandu Valley. From completed masterpieces to ongoing excellence.
             </p>
@@ -119,14 +118,14 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-12">
             {/* Budanilkantha */}
             <div className="group text-center">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-lime-600 transition" />
               <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Budanilkantha Residence</h3>
               <p className="text-gray-600">Completed Luxury Home</p>
             </div>
 
             {/* Sunakothi */}
             <div className="group text-center">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-[#D4B65A] transition" />
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mb-6 group-hover:border-lime-600 transition" />
               <h3 className="text-2xl font-medium text-[#0A1A2F] mb-2">Sunakothi Residence</h3>
               <p className="text-gray-600">Ongoing Construction</p>
             </div>
@@ -148,7 +147,7 @@ const Home = () => {
           <div className="text-center mt-16">
             <Link
               to="/full-home-construction"
-              className="inline-block bg-[#D4B65A] text-[#0A1A2F] px-14 py-5 text-xl uppercase tracking-widest font-medium rounded-full hover:bg-[#c2a54d] transition duration-300 shadow-xl"
+              className="inline-block bg-lime-600 text-white px-14 py-5 text-xl uppercase tracking-widest font-medium rounded-full hover:bg-lime-500 transition duration-300 shadow-xl"
             >
               View Full Home Construction
             </Link>
@@ -161,9 +160,9 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-widest text-[#0A1A2F] leading-tight">
-              <span className="font-bold text-[#D4B65A]">OUR</span> EXPERTISE
+              <span className="font-bold text-lime-600">OUR</span> EXPERTISE
             </h2>
-            <div className="mx-auto mt-8 h-px w-48 bg-[#D4B65A]/60" />
+            <div className="mx-auto mt-8 h-px w-48 bg-lime-600/60" />
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -180,7 +179,7 @@ const Home = () => {
                 </p>
                 <Link
                   to="/services"
-                  className="inline-block text-[#D4B65A] font-medium hover:text-[#c2a54d] transition self-center"
+                  className="inline-block text-lime-600 font-medium hover:text-lime-500 transition self-center"
                 >
                   Learn More →
                 </Link>
@@ -191,7 +190,7 @@ const Home = () => {
           <div className="text-center mt-20">
             <Link
               to="/services"
-              className="inline-block bg-[#D4B65A] text-[#0A1A2F] px-14 py-5 text-xl uppercase tracking-widest font-medium rounded-full hover:bg-[#c2a54d] transition duration-300 shadow-xl"
+              className="inline-block bg-lime-600 text-white px-14 py-5 text-xl uppercase tracking-widest font-medium rounded-full hover:bg-lime-500 transition duration-300 shadow-xl"
             >
               Explore All Services
             </Link>

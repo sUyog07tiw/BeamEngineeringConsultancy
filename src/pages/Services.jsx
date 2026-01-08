@@ -66,7 +66,7 @@ const Services = () => {
                 We deliver luxury residences with precision, safety and timeless elegance across Kathmandu Valley.
               </p>
 
-              <span className="inline-block text-[#D4B65A] text-xl font-medium uppercase tracking-wider self-center group-hover:underline">
+              <span className="inline-block text-lime-800 text-xl font-medium uppercase tracking-wider self-center group-hover:underline">
                 View Projects →
               </span>
             </div>
@@ -89,7 +89,7 @@ const Services = () => {
           <div className="text-center mt-20">
             <button
               onClick={goToContactTop}
-              className="rounded-full bg-[#D4B65A] px-10 py-4 text-base uppercase tracking-widest text-[#0A1A2F] font-medium transition duration-300 hover:bg-[#c2a54d] hover:shadow-xl"
+              className="rounded-full bg-lime-800 px-10 py-4 text-base uppercase tracking-widest text-lime-50 font-medium transition duration-300 hover:bg-lime-700 hover:shadow-xl"
             >
               Discuss Your Project
             </button>

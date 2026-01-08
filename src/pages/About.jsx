@@ -81,8 +81,8 @@ const About = () => {
             </h1>
 
             <div className="mt-10">
-              <div className="mx-auto mb-8 h-px w-48 bg-[#D4B65A]/60" />
-              <p className="text-2xl md:text-3xl lg:text-4xl tracking-widest text-[#D4B65A] uppercase font-light">
+              <div className="mx-auto mb-8 h-px w-48 bg-lime-800/60" />
+              <p className="text-2xl md:text-3xl lg:text-4xl tracking-widest text-lime-700 uppercase font-light">
                 Leadership & Team
               </p>
               <p className="text-lg md:text-xl lg:text-2xl tracking-wide text-gray-300 mt-6 max-w-3xl mx-auto">
@@ -94,7 +94,7 @@ const About = () => {
             <div className="mt-20 flex justify-center">
               <button
                 onClick={scrollToTeam}
-                className="rounded-full bg-[#D4B65A] px-10 py-4 text-base uppercase tracking-widest text-[#0A1A2F] font-medium transition duration-300 hover:bg-[#c2a54d] hover:shadow-xl"
+                className="rounded-full bg-lime-800 px-10 py-4 text-base uppercase tracking-widest text-lime-50 font-medium transition duration-300 hover:bg-lime-700 hover:shadow-xl"
               >
                 Meet the Team
               </button>
@@ -120,7 +120,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A2F]/80 to-transparent opacity-0 group-hover:opacity-100 transition" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-medium text-[#0A1A2F]">{member.name}</h3>
-                <p className="text-[#D4B65A] text-lg tracking-wider mt-2 font-medium">{member.role}</p>
+                <p className="text-lime-700 text-lg tracking-wider mt-2 font-medium">{member.role}</p>
                 <p className="text-gray-600 text-base mt-4 max-w-md mx-auto leading-relaxed">
                   {member.desc}
                 </p>
@@ -146,7 +146,7 @@ const About = () => {
                   className="w-full h-80 object-cover rounded-lg grayscale group-hover:grayscale-0 transition" 
                 />
                 <h3 className="text-xl font-medium text-[#0A1A2F] mt-6">{member.name}</h3>
-                <p className="text-[#D4B65A] text-sm tracking-wider mt-1">{member.role}</p>
+                <p className="text-lime-700 text-sm tracking-wider mt-1">{member.role}</p>
                 <p className="text-gray-600 text-sm mt-3 max-w-sm mx-auto leading-relaxed">
                   {member.desc}
                 </p>
@@ -158,7 +158,7 @@ const About = () => {
           <div className="text-center mt-24">
             <button
               onClick={goToContactTop}
-              className="rounded-full bg-[#D4B65A] px-10 py-4 text-base uppercase tracking-widest text-[#0A1A2F] font-medium transition duration-300 hover:bg-[#c2a54d] hover:shadow-xl"
+              className="rounded-full bg-lime-800 px-10 py-4 text-base uppercase tracking-widest text-lime-50 font-medium transition duration-300 hover:bg-lime-700 hover:shadow-xl"
             >
               Contact the Team
             </button>

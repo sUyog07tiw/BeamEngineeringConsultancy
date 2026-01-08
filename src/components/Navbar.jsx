@@ -17,9 +17,9 @@ export default function NavBar() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      {/* Glass container */}
-      <nav className="mx-auto ">
-        <div className=" bg-[#D4B65A] md:px-5 shadow-xl">
+      <nav className="mx-auto">
+        {/* Modern glass header */}
+        <div className="bg-lime-100/70 backdrop-blur-md border-b border-lime-200/70 md:px-5 shadow-lg">
           <div className="flex h-20 items-center justify-between px-6">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-4">
@@ -40,12 +40,12 @@ export default function NavBar() {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`relative text-sm uppercase tracking-widest transition-all
+                    className={`relative text-sm uppercase tracking-widest transition-colors
                       ${active ? "text-[#0A1A2F]" : "text-[#0A1A2F]/70 hover:text-[#0A1A2F]"}`}
                   >
                     {item.name}
                     {active && (
-                      <span className="absolute -bottom-2 left-1/2 h-[2px] w-6 -translate-x-1/2 rounded-full bg-[#0A1A2F]" />
+                      <span className="absolute -bottom-2 left-1/2 h-[2px] w-7 -translate-x-1/2 rounded-full bg-lime-800" />
                     )}
                   </Link>
                 );
@@ -64,17 +64,17 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="md:hidden mt-3 rounded-2xl bg-[#D4B65A]/90 backdrop-blur-md shadow-lg">
-            <div className="flex flex-col divide-y divide-[#0A1A2F]/20">
+          <div className="md:hidden mt-3 rounded-2xl bg-lime-100/80 backdrop-blur-md shadow-xl border border-lime-200/70 overflow-hidden">
+            <div className="flex flex-col divide-y divide-lime-200/70">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   onClick={() => setOpen(false)}
-                  className={`px-6 py-4 text-sm uppercase tracking-widest transition-all
+                  className={`px-6 py-4 text-sm uppercase tracking-widest transition-colors
                     ${location.pathname === item.path
-                      ? "text-[#0A1A2F] font-medium"
-                      : "text-[#0A1A2F]/70 hover:text-[#0A1A2F]"}`}
+                      ? "text-[#0A1A2F] font-medium bg-lime-200/50"
+                      : "text-[#0A1A2F]/70 hover:text-[#0A1A2F] hover:bg-lime-50"}`}
                 >
                   {item.name}
                 </Link>
