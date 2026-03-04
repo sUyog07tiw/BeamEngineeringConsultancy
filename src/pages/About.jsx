@@ -27,7 +27,7 @@ const team = [
     desc: "Expert in civil design, site execution, feasibility studies, and sustainable construction practices."
   },
   {
-    name: "Utsav Shrestha",
+    name: "Utsav Shakya",
     role: "Structural Engineer",
     phone: "9851324141",
     img: "", // No image available
