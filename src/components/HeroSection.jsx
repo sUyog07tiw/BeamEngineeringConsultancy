@@ -200,32 +200,7 @@ const HeroSection = ({ title, subtitle }) => {
             </div>
           )}
 
-          {/* CTA Buttons */}
-          <div 
-            className={`mt-14 flex flex-col sm:flex-row justify-center gap-5 transition-all duration-700 delay-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-          >
-            <a
-              href="/services"
-              className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm uppercase tracking-widest font-medium rounded-full overflow-hidden shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all duration-300 hover:-translate-y-1"
-            >
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                Our Services
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
-            <a
-              href="/contact"
-              className="group relative px-10 py-4 text-white text-sm uppercase tracking-widest font-medium rounded-full overflow-hidden border border-white/20 hover:border-white/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1"
-            >
-              <span className="relative z-10">Contact Team</span>
-              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
-          </div>
+          
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* ===== Tailwind v4 Theme Configuration ===== */
@@ -47,9 +48,6 @@
   --shadow-glow-blue: 0 0 40px rgba(37, 99, 235, 0.3);
   --shadow-glow-gold: 0 0 40px rgba(212, 175, 55, 0.3);
 }
-
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap');
 
 /* ===== CSS Variables ===== */
 :root {
