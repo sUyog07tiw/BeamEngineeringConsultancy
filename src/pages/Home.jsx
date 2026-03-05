@@ -147,7 +147,7 @@ const Home = () => {
               to="/full-home-construction"
               className="inline-block bg-transparent text-blue border-2 border-blue px-14 py-5 text-xl uppercase tracking-widest font-medium rounded-full hover:bg-blue hover:text-white transition duration-300 shadow-xl"
             >
-              View Full Home Construction
+              View Full Home Construction     
             </Link>
           </div>
         </div>
@@ -162,7 +162,7 @@ const Home = () => {
             </h2>
             <div className="mx-auto mt-8 h-px w-48 bg-blue/60" />
           </div>
-
+            
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {services.map((service, index) => (
               <div
@@ -170,6 +170,7 @@ const Home = () => {
                 className="group bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl hover:transform hover:scale-105 transition duration-300 flex flex-col h-full"
               >
                 <h3 className="text-2xl font-medium text-[#0A1A2F] mb-4 tracking-wide">
+                  
                   {service.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6 flex-grow">

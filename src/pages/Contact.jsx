@@ -38,7 +38,7 @@ const Contact = () => {
             <div className="mt-12 flex items-center justify-center">
               <Button
                   onClick={scrollToContactInfo}
-                  className="rounded-full bg-blue text-white hover:bg-blue-dark hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-dark/60 focus:ring-offset-2"
+                  className="rounded-full bg-blue text-blue hover:bg-blue-dark hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-dark/60 focus:ring-offset-2"
               >
                 Consult Our Experts
               </Button>
