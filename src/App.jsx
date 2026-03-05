@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import FullHomeConstruction from './pages/FullHomeConstruction';  // Added import
 import Layout from './components/Layout';
 
+
 const App = () => {
   return (
     <Router>
