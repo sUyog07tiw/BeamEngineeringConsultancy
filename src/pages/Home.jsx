@@ -172,7 +172,7 @@ const Home = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <span className="inline-block px-3 py-1 bg-amber-500 text-white text-xs uppercase tracking-wider rounded-full">Ongoing</span>
                 </div>
-              </div>
+              </div>      
               <h3 className="text-xl font-display font-medium text-navy-800 group-hover:text-blue-600 transition-colors duration-300">
                 Balkumari (Imadol) Residence
               </h3>
