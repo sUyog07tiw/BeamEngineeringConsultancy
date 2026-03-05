@@ -117,7 +117,7 @@ const Home = () => {
             </h2>
             <div className="section-divider mt-6" />
             <p className="text-lg text-slate mt-8 max-w-2xl mx-auto leading-relaxed">
-              We are proud to deliver luxury dream homes across Kathmandu Valley. From completed masterpieces to ongoing excellence.
+              We are very proud to deliver luxury dream homes across Kathmandu Valley. From completed masterpieces to ongoing excellence.
             </p>
           </div>
 
