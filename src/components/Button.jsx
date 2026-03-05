@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Button = ({ children, variant = 'primary', size = 'md', to, href, className = '', ...props }) => {
   const variants = {
-    primary: 'bg-black text-white hover:bg-gray-900',
-    secondary: 'bg-white text-black border-2 border-black hover:bg-gray-100',
-    outline: 'bg-transparent text-black border-2 border-black hover:bg-black hover:text-white',
+    primary: 'bg-blue text-white hover:bg-blue-dark',
+    secondary: 'bg-white text-blue border-2 border-blue hover:bg-blue-light/10',
+    outline: 'bg-transparent text-blue border-2 border-blue hover:bg-blue hover:text-white',
+    minimal: 'bg-transparent text-blue hover:bg-blue-light/10 border-none',
   };
   const sizes = { sm: 'px-6 py-3 text-sm', md: 'px-10 py-4 text-lg', lg: 'px-14 py-6 text-xl' };
   const base = `inline-block font-medium tracking-widest uppercase transition-all duration-300 ${variants[variant]} ${sizes[size]} ${className}`;

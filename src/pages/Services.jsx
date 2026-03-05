@@ -36,7 +36,7 @@ const Services = () => {
             alt="BEAM Engineering Services"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-beam/90 via-beam/70 to-beam-dark/95" />
         </div>
 
         <div className="relative z-10 flex h-full items-center justify-center px-6">
@@ -62,11 +62,11 @@ const Services = () => {
                 Full Home Construction
               </h3>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 flex-grow text-center">
-                BEAM now offers complete turnkey home construction from concept design to final handover. 
+                BEAM now offers complete home construction from concept design to final handover. 
                 We deliver luxury residences with precision, safety and timeless elegance across Kathmandu Valley.
               </p>
 
-              <span className="inline-block text-lime-800 text-xl font-medium uppercase tracking-wider self-center group-hover:underline">
+              <span className="inline-block text-blue text-xl font-medium uppercase tracking-wider self-center group-hover:underline">
                 View Projects →
               </span>
             </div>
@@ -89,7 +89,7 @@ const Services = () => {
           <div className="text-center mt-20">
             <button
               onClick={goToContactTop}
-              className="rounded-full bg-lime-800 px-10 py-4 text-base uppercase tracking-widest text-lime-50 font-medium transition duration-300 hover:bg-lime-700 hover:shadow-xl"
+              className="rounded-full bg-blue px-10 py-4 text-base uppercase tracking-widest text-white font-medium transition duration-300 hover:bg-blue-dark hover:shadow-xl"
             >
               Discuss Your Project
             </button>

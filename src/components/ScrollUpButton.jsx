@@ -13,9 +13,9 @@ const ScrollUpButton = () => {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className={`fixed bottom-8 right-8 z-50 p-4 bg-black text-white transition-all duration-500 ${
+      className={`fixed bottom-8 right-8 z-50 p-4 bg-beam text-white transition-all duration-500 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-      } hover:bg-gray-900`}
+      } hover:bg-beam-dark`}
     >
       <ArrowUp className="w-6 h-6" />
     </button>

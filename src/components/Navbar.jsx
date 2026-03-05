@@ -18,15 +18,15 @@ export default function NavBar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       <nav className="mx-auto">
-        {/* Modern glass header */}
-        <div className="bg-lime-100/70 backdrop-blur-md border-b border-lime-200/70 md:px-5 shadow-lg">
+        {/* Minimal elegant header */}
+        <div className="bg-beige backdrop-blur-md border-b border-beam-dark/10 md:px-5 shadow-lg">
           <div className="flex h-20 items-center justify-between px-6">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-4">
               <img src={logo} alt="BEAM" className="h-12 object-contain" />
               <div className="hidden sm:block leading-tight">
-                <h1 className="text-3xl font-light tracking-widest text-[#0A1A2F]">BEAM</h1>
-                <p className="text-[10px] tracking-[0.4em] uppercase text-[#0A1A2F]/80">
+                <h1 className="text-3xl font-light tracking-widest text-blue">BEAM</h1>
+                <p className="text-[10px] tracking-[0.4em] uppercase text-blue/80">
                   Engineering Consultancy
                 </p>
               </div>
@@ -40,12 +40,12 @@ export default function NavBar() {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`relative text-sm uppercase tracking-widest transition-colors
-                      ${active ? "text-[#0A1A2F]" : "text-[#0A1A2F]/70 hover:text-[#0A1A2F]"}`}
+                    className={`relative text-sm uppercase tracking-widest transition-colors px-2 py-1 rounded-md
+                      ${active ? "text-blue font-semibold" : "text-blue/80 hover:text-blue"}`}
                   >
                     {item.name}
                     {active && (
-                      <span className="absolute -bottom-2 left-1/2 h-[2px] w-7 -translate-x-1/2 rounded-full bg-lime-800" />
+                      <span className="absolute -bottom-2 left-1/2 h-[2px] w-7 -translate-x-1/2 rounded-full bg-blue-light" />
                     )}
                   </Link>
                 );
@@ -55,7 +55,7 @@ export default function NavBar() {
             {/* Mobile Button */}
             <button
               onClick={() => setOpen(!open)}
-              className="md:hidden text-[#0A1A2F]"
+              className="md:hidden text-blue"
             >
               {open ? <X size={26} /> : <Menu size={26} />}
             </button>
@@ -64,17 +64,17 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="md:hidden mt-3 rounded-2xl bg-lime-100/80 backdrop-blur-md shadow-xl border border-lime-200/70 overflow-hidden">
-            <div className="flex flex-col divide-y divide-lime-200/70">
+          <div className="md:hidden mt-3 rounded-2xl bg-beige backdrop-blur-md shadow-xl border border-beam-dark/10 overflow-hidden">
+            <div className="flex flex-col divide-y divide-blue/10">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   onClick={() => setOpen(false)}
-                  className={`px-6 py-4 text-sm uppercase tracking-widest transition-colors
+                  className={`px-6 py-4 text-sm uppercase tracking-widest transition-colors rounded-none
                     ${location.pathname === item.path
-                      ? "text-[#0A1A2F] font-medium bg-lime-200/50"
-                      : "text-[#0A1A2F]/70 hover:text-[#0A1A2F] hover:bg-lime-50"}`}
+                      ? "text-blue font-medium bg-blue-light/10"
+                      : "text-blue/80 hover:text-blue hover:bg-blue-light/5"}`}
                 >
                   {item.name}
                 </Link>

@@ -78,7 +78,7 @@ const About = () => {
             alt="BEAM Engineering Consultancy"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary-dark/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-beam/90 via-beam/70 to-beam-dark/95" />
         </div>
         <div className="relative z-10 flex h-full items-center justify-center px-6">
           <div className="max-w-5xl text-center">
@@ -158,7 +158,7 @@ const About = () => {
           <div className="text-center mt-24">
             <button
               onClick={goToContactTop}
-              className="rounded-full bg-blue-900 px-10 py-4 text-base uppercase tracking-widest text-white font-medium transition duration-300 hover:bg-blue-800 hover:shadow-xl"
+              className="rounded-full bg-blue px-10 py-4 text-base uppercase tracking-widest text-white font-medium transition duration-300 hover:bg-blue-dark hover:shadow-xl"
             >
               Contact the Team
             </button>
