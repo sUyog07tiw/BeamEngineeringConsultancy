@@ -107,7 +107,7 @@ const Footer = () => {
                 >
                   <Phone className="w-4 h-4 mt-0.5 text-blue-400" />
                   <span className="text-sm">
-                    9851048896 / 9851314760
+                    9851048896 / 9851314760 / 9851324141
                   </span>
                 </a>
               </li>
